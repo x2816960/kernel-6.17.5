@@ -173,6 +173,8 @@ extern void *__vmalloc_node_range_noprof(unsigned long size, unsigned long align
 			const void *caller) __alloc_size(1);
 #define __vmalloc_node_range(...)	alloc_hooks(__vmalloc_node_range_noprof(__VA_ARGS__))
 
+extern void *__vmalloc_prot(unsigned long size, gfp_t gfp_mask, pgprot_t prot);
+ 
 void *__vmalloc_node_noprof(unsigned long size, unsigned long align, gfp_t gfp_mask,
 		int node, const void *caller) __alloc_size(1);
 #define __vmalloc_node(...)	alloc_hooks(__vmalloc_node_noprof(__VA_ARGS__))

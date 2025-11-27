@@ -543,7 +543,14 @@ struct mmc_host *mmc_alloc_host(int extra, struct device *dev)
 	}
 
 	host->index = index;
-
+	//xuw add start
+	if(host->index == 0) {
+		host->index = 1;
+	} else {
+		host->index = 0;
+	}
+	//xuw add end
+	printk(KERN_ALERT"[XUW]host index=%d\n",host->index);
 	dev_set_name(&host->class_dev, "mmc%d", host->index);
 	host->ws = wakeup_source_register(NULL, dev_name(&host->class_dev));
 
