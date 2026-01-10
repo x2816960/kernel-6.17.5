@@ -27,7 +27,7 @@
 
 /* Free memory management - zoned buddy allocator.  */
 #ifndef CONFIG_ARCH_FORCE_MAX_ORDER
-#define MAX_PAGE_ORDER 10
+#define MAX_PAGE_ORDER 13
 #else
 #define MAX_PAGE_ORDER CONFIG_ARCH_FORCE_MAX_ORDER
 #endif
